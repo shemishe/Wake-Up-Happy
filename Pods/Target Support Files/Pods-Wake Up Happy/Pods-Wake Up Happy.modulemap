@@ -1,0 +1,6 @@
+framework module Pods_Wake_Up_Happy {
+  umbrella header "Pods-Wake Up Happy-umbrella.h"
+
+  export *
+  module * { export * }
+}
