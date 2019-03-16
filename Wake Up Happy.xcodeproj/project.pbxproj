@@ -16,6 +16,10 @@
 		E97D7B212236D0EB00C762D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B1F2236D0EB00C762D2 /* LaunchScreen.storyboard */; };
 		E97D7B292236D2BA00C762D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B282236D2BA00C762D2 /* GoogleService-Info.plist */; };
 		E97D7B2B22379A3400C762D2 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D7B2A22379A3400C762D2 /* Videos.swift */; };
+		E97D7B33223C893A00C762D2 /* Sketch 3D.otf in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B32223C893A00C762D2 /* Sketch 3D.otf */; };
+		E97D7B36223C995500C762D2 /* launica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B34223C995500C762D2 /* launica.ttf */; };
+		E97D7B37223C995500C762D2 /* launica 2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B35223C995500C762D2 /* launica 2.ttf */; };
+		E97D7B39223CC2D600C762D2 /* EndPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D7B38223CC2D600C762D2 /* EndPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +36,10 @@
 		E97D7B222236D0EB00C762D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E97D7B282236D2BA00C762D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E97D7B2A22379A3400C762D2 /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		E97D7B32223C893A00C762D2 /* Sketch 3D.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Sketch 3D.otf"; sourceTree = "<group>"; };
+		E97D7B34223C995500C762D2 /* launica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launica.ttf; sourceTree = "<group>"; };
+		E97D7B35223C995500C762D2 /* launica 2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "launica 2.ttf"; sourceTree = "<group>"; };
+		E97D7B38223CC2D600C762D2 /* EndPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,16 +93,53 @@
 			isa = PBXGroup;
 			children = (
 				E97D7B132236D0E900C762D2 /* AppDelegate.swift */,
-				E97D7B152236D0E900C762D2 /* ViewController.swift */,
-				E97D7B2A22379A3400C762D2 /* Videos.swift */,
-				E97D7B172236D0E900C762D2 /* Main.storyboard */,
-				E97D7B1D2236D0EB00C762D2 /* Assets.xcassets */,
-				E97D7B1F2236D0EB00C762D2 /* LaunchScreen.storyboard */,
+				E97D7B2C223B79DA00C762D2 /* Model */,
+				E97D7B2D223B79ED00C762D2 /* View */,
+				E97D7B2E223B7A1000C762D2 /* Controller */,
+				E97D7B31223C892100C762D2 /* Fonts */,
 				E97D7B222236D0EB00C762D2 /* Info.plist */,
+				E97D7B1D2236D0EB00C762D2 /* Assets.xcassets */,
 				E97D7B282236D2BA00C762D2 /* GoogleService-Info.plist */,
-				E97D7B1A2236D0E900C762D2 /* Wake_Up_Happy.xcdatamodeld */,
 			);
 			path = "Wake Up Happy";
+			sourceTree = "<group>";
+		};
+		E97D7B2C223B79DA00C762D2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E97D7B1A2236D0E900C762D2 /* Wake_Up_Happy.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E97D7B2D223B79ED00C762D2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E97D7B1F2236D0EB00C762D2 /* LaunchScreen.storyboard */,
+				E97D7B172236D0E900C762D2 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E97D7B2E223B7A1000C762D2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E97D7B152236D0E900C762D2 /* ViewController.swift */,
+				E97D7B2A22379A3400C762D2 /* Videos.swift */,
+				E97D7B38223CC2D600C762D2 /* EndPageViewController.swift */,
+			);
+			name = Controller;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		E97D7B31223C892100C762D2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E97D7B32223C893A00C762D2 /* Sketch 3D.otf */,
+				E97D7B35223C995500C762D2 /* launica 2.ttf */,
+				E97D7B34223C995500C762D2 /* launica.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +206,9 @@
 				E97D7B292236D2BA00C762D2 /* GoogleService-Info.plist in Resources */,
 				E97D7B1E2236D0EB00C762D2 /* Assets.xcassets in Resources */,
 				E97D7B192236D0E900C762D2 /* Main.storyboard in Resources */,
+				E97D7B36223C995500C762D2 /* launica.ttf in Resources */,
+				E97D7B37223C995500C762D2 /* launica 2.ttf in Resources */,
+				E97D7B33223C893A00C762D2 /* Sketch 3D.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +274,7 @@
 				E97D7B2B22379A3400C762D2 /* Videos.swift in Sources */,
 				E97D7B142236D0E900C762D2 /* AppDelegate.swift in Sources */,
 				E97D7B1C2236D0E900C762D2 /* Wake_Up_Happy.xcdatamodeld in Sources */,
+				E97D7B39223CC2D600C762D2 /* EndPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
