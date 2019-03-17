@@ -20,6 +20,8 @@
 		E97D7B36223C995500C762D2 /* launica.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B34223C995500C762D2 /* launica.ttf */; };
 		E97D7B37223C995500C762D2 /* launica 2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E97D7B35223C995500C762D2 /* launica 2.ttf */; };
 		E97D7B39223CC2D600C762D2 /* EndPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D7B38223CC2D600C762D2 /* EndPageViewController.swift */; };
+		E97D7B3B223CDFCD00C762D2 /* AboutPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D7B3A223CDFCD00C762D2 /* AboutPageViewController.swift */; };
+		E97D7B3D223CDFD800C762D2 /* InfoPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D7B3C223CDFD800C762D2 /* InfoPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E97D7B34223C995500C762D2 /* launica.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = launica.ttf; sourceTree = "<group>"; };
 		E97D7B35223C995500C762D2 /* launica 2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "launica 2.ttf"; sourceTree = "<group>"; };
 		E97D7B38223CC2D600C762D2 /* EndPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPageViewController.swift; sourceTree = "<group>"; };
+		E97D7B3A223CDFCD00C762D2 /* AboutPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPageViewController.swift; sourceTree = "<group>"; };
+		E97D7B3C223CDFD800C762D2 /* InfoPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +131,8 @@
 				E97D7B152236D0E900C762D2 /* ViewController.swift */,
 				E97D7B2A22379A3400C762D2 /* Videos.swift */,
 				E97D7B38223CC2D600C762D2 /* EndPageViewController.swift */,
+				E97D7B3A223CDFCD00C762D2 /* AboutPageViewController.swift */,
+				E97D7B3C223CDFD800C762D2 /* InfoPageViewController.swift */,
 			);
 			name = Controller;
 			path = ..;
@@ -271,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E97D7B162236D0E900C762D2 /* ViewController.swift in Sources */,
+				E97D7B3B223CDFCD00C762D2 /* AboutPageViewController.swift in Sources */,
 				E97D7B2B22379A3400C762D2 /* Videos.swift in Sources */,
+				E97D7B3D223CDFD800C762D2 /* InfoPageViewController.swift in Sources */,
 				E97D7B142236D0E900C762D2 /* AppDelegate.swift in Sources */,
 				E97D7B1C2236D0E900C762D2 /* Wake_Up_Happy.xcdatamodeld in Sources */,
 				E97D7B39223CC2D600C762D2 /* EndPageViewController.swift in Sources */,
