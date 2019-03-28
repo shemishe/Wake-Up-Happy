@@ -22,6 +22,13 @@ class ViewController: UIViewController {
     
     var randomNumber = Int.random(in: 0...2)
     
+    // Time Formatter
+    
+    let time = Date()
+    let timeFormatter = DateFormatter()
+    var currentTime = String()
+    
+    
     // Home Screen labels & play button outlets
 
     @IBOutlet weak var playButton: UIButton!
@@ -40,16 +47,17 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        timeFormatter.dateFormat = "HH:mm"
+        currentTime = timeFormatter.string(from: time)
+        
+        print("TODAY DATE \(currentTime)")
         
         firebaseReference = Database.database().reference().child("videos")
-        
         firebaseReference.observe(DataEventType.value, with: {(snapshot) in
             
             if snapshot.childrenCount > 0 {
-                
                 self.videoStruct.removeAll()
-                
                 for video in snapshot.children.allObjects as! [DataSnapshot] {
                     
                     let Object = video.value as? [String: AnyObject]
@@ -59,9 +67,6 @@ class ViewController: UIViewController {
                     let video = Videos(Title: videoTitle as? String, link: videoLink as? String)
                     
                     self.videoStruct.append(video)
-                    
-                    // print(self.randomNumber)
-                    
                 }
                 
             }
@@ -69,49 +74,53 @@ class ViewController: UIViewController {
         })
         
     }
+    
+    // AVPlayer functionality
 
     @IBAction func PressToPlayButton(_ sender: Any) {
         
-        guard let videoURL = URL(string: videoStruct[randomNumber].link!) else {
+        // Time range for allowed video play
+        
+        let startTime = "08:00"
+        let endTime = "13:00"
+        let timeRange = startTime ... endTime
+        
+        if timeRange.contains(currentTime) {
             
-            return
+            // Getting video URL and creating the player
             
-        }
-        
-        let player = AVPlayer(url: videoURL)
-        
-        controller.player = player
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(videoDidEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
-        
-        hideHomePageButtons()
-        
-        present(controller, animated: true) {
+            guard let videoURL = URL(string: videoStruct[randomNumber].link!) else {
+                return
+            }
+            let player = AVPlayer(url: videoURL)
+            controller.player = player
             
-            player.play()
+            NotificationCenter.default.addObserver(self, selector: #selector(videoDidEnd), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: nil)
             
+            hideHomePageButtons()
+            
+            present(controller, animated: true) {
+                player.play()
+            }
+            
+        } else {
+            performSegue(withIdentifier: "cannotPlaySegue", sender: self)
         }
         
     }
     
     @objc func videoDidEnd(notification: NSNotification) {
-
         controller.dismiss(animated: true, completion: {
-            
             self.performSegue(withIdentifier: "endPageSegue", sender: self)
-            
         })
 
     }
     
     deinit {
-        
         NotificationCenter.default.removeObserver(self)
-        
     }
     
     func hideHomePageButtons() {
-        
         homePageDescriptionLabelOne.isHidden = true
         homePageDescriptionLabelTwo.isHidden = true
         homePageDescriptionLabelThree.isHidden = true
@@ -119,7 +128,6 @@ class ViewController: UIViewController {
         aboutButton.isHidden = true
         infoButton.isHidden = true
         playButton.isHidden = true
-        
     }
 
 }
