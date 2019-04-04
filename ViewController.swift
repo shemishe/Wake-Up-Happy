@@ -28,6 +28,18 @@ class ViewController: UIViewController {
     let timeFormatter = DateFormatter()
     var currentTime = String()
     
+    // Time range for allowed video play
+    
+    let startTime = "14:00"
+    let endTime = "16:30"
+    
+    // Userdefaults
+    
+    let defaults = UserDefaults.standard
+    
+    // Has the user already played the video today?
+    
+    var userPlayedVideo = false
     
     // Home Screen labels & play button outlets
 
@@ -48,30 +60,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        timeFormatter.dateFormat = "HH:mm"
-        currentTime = timeFormatter.string(from: time)
+        formatTime()
         
         print("TODAY DATE \(currentTime)")
         
-        firebaseReference = Database.database().reference().child("videos")
-        firebaseReference.observe(DataEventType.value, with: {(snapshot) in
-            
-            if snapshot.childrenCount > 0 {
-                self.videoStruct.removeAll()
-                for video in snapshot.children.allObjects as! [DataSnapshot] {
-                    
-                    let Object = video.value as? [String: AnyObject]
-                    let videoTitle = Object?["title"]
-                    let videoLink = Object?["link"]
-                    
-                    let video = Videos(Title: videoTitle as? String, link: videoLink as? String)
-                    
-                    self.videoStruct.append(video)
-                }
-                
-            }
-            
-        })
+        referenceFromFireBase()
         
     }
     
@@ -79,13 +72,13 @@ class ViewController: UIViewController {
 
     @IBAction func PressToPlayButton(_ sender: Any) {
         
-        // Time range for allowed video play
-        
-        let startTime = "08:00"
-        let endTime = "13:00"
         let timeRange = startTime ... endTime
-        
-        if timeRange.contains(currentTime) {
+    
+        if !timeRange.contains(currentTime) || defaults.bool(forKey: "videoPlayed") == true {
+            performSegue(withIdentifier: "cannotPlaySegue", sender: self)
+        } else if timeRange.contains(currentTime) && userPlayedVideo == false {
+            userPlayedVideo = true
+            defaults.set(userPlayedVideo, forKey: "videoPlayed")
             
             // Getting video URL and creating the player
             
@@ -103,8 +96,6 @@ class ViewController: UIViewController {
                 player.play()
             }
             
-        } else {
-            performSegue(withIdentifier: "cannotPlaySegue", sender: self)
         }
         
     }
@@ -128,6 +119,33 @@ class ViewController: UIViewController {
         aboutButton.isHidden = true
         infoButton.isHidden = true
         playButton.isHidden = true
+    }
+    
+    func formatTime() {
+        timeFormatter.dateFormat = "HH:mm"
+        currentTime = timeFormatter.string(from: time)
+    }
+    
+    func referenceFromFireBase() {
+        firebaseReference = Database.database().reference().child("videos")
+        firebaseReference.observe(DataEventType.value, with: {(snapshot) in
+            
+            if snapshot.childrenCount > 0 {
+                self.videoStruct.removeAll()
+                for video in snapshot.children.allObjects as! [DataSnapshot] {
+                    
+                    let Object = video.value as? [String: AnyObject]
+                    let videoTitle = Object?["title"]
+                    let videoLink = Object?["link"]
+                    
+                    let video = Videos(Title: videoTitle as? String, link: videoLink as? String)
+                    
+                    self.videoStruct.append(video)
+                }
+                
+            }
+            
+        })
     }
 
 }

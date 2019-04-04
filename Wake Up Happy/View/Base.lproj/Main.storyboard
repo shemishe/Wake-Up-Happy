@@ -207,10 +207,10 @@
                                 <color key="textColor" red="0.35819172859999998" green="0.35848766570000001" blue="0.35823759440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-8l-rTP">
-                                <rect key="frame" x="32" y="378" width="311" height="165"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-8l-rTP">
+                                <rect key="frame" x="32" y="378" width="311" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">In order to have you not stay on your phone, the app will lock you out from playing another video once you've finished watching the current one, so if you want to watch it again, make sure you rewind it before the video player closes!</string>
+                                <string key="text">In order for you, the user, to enjoy the day, staying on your phone would be counterintuitive. The app will lock you out from playing another video once you've finished watching the current one, so if you want to watch it again, make sure you rewind it before the video player closes!</string>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
                                 <color key="textColor" red="0.35819172859999998" green="0.35848766570000001" blue="0.35823759440000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
